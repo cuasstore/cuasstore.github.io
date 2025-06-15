@@ -1,0 +1,78 @@
+{
+    "hot": [
+        {
+            "id": 1,
+            "title": "无线蓝牙耳机 高音质降噪 运动耳机",
+            "price": 199.00,
+            "originalPrice": 299.00,
+            "sales": "已售1.2万",
+            "image": "images/earphones.jpg",
+            "taobaoLink": "https://taobao.com/item1"
+        },
+        {
+            "id": 2,
+            "title": "智能手表 心率监测 运动防水",
+            "price": 399.00,
+            "originalPrice": 599.00,
+            "sales": "已售8千",
+            "image": "images/smartwatch.jpg",
+            "taobaoLink": "https://taobao.com/item2"
+        },
+        {
+            "id": 3,
+            "title": "便携式迷你风扇 静音USB充电",
+            "price": 59.00,
+            "originalPrice": 89.00,
+            "sales": "已售2.5万",
+            "image": "images/fan.jpg",
+            "taobaoLink": "https://taobao.com/item3"
+        },
+        {
+            "id": 4,
+            "title": "无线充电器 快充 多设备兼容",
+            "price": 129.00,
+            "originalPrice": 199.00,
+            "sales": "已售5千",
+            "image": "images/charger.jpg",
+            "taobaoLink": "https://taobao.com/item4"
+        }
+    ],
+    "new": [
+        {
+            "id": 5,
+            "title": "智能音箱 语音助手 家居控制",
+            "price": 299.00,
+            "originalPrice": 399.00,
+            "sales": "新品上市",
+            "image": "images/speaker.jpg",
+            "taobaoLink": "https://taobao.com/item5"
+        },
+        {
+            "id": 6,
+            "title": "电动牙刷 声波震动 多种模式",
+            "price": 159.00,
+            "originalPrice": 259.00,
+            "sales": "新品上市",
+            "image": "images/toothbrush.jpg",
+            "taobaoLink": "https://taobao.com/item6"
+        },
+        {
+            "id": 7,
+            "title": "便携投影仪 高清1080P 家庭影院",
+            "price": 899.00,
+            "originalPrice": 1299.00,
+            "sales": "新品上市",
+            "image": "images/projector.jpg",
+            "taobaoLink": "https://taobao.com/item7"
+        },
+        {
+            "id": 8,
+            "title": "空气炸锅 无油健康 多功能",
+            "price": 399.00,
+            "originalPrice": 599.00,
+            "sales": "新品上市",
+            "image": "images/airfryer.jpg",
+            "taobaoLink": "https://taobao.com/item8"
+        }
+    ]
+}
