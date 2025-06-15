@@ -1,87 +1,27 @@
-﻿// 模拟商品数据 (实际应用中应从外部JSON文件加载)
-const products = {
-    hot: [
-        {
-            id: 1,
-            title: "变色龙Ultra",
-            price: 179.00,
-            originalPrice: 199.00,
-            sales: "已售0",
-            image: "images/cu-PL-LF.png",
-            taobaoLink: "https://taobao.com/"
-        },
-        {
-            id: 2,
-            title: "自动轮询激活码👍",
-            price: 30.00,
-            originalPrice: 399.9,
-            sales: "已售300+",
-            image: "images/cu-PL-LF.png",
-            taobaoLink: "https://taobao.com"
-        },
-        {
-            id: 3,
-            title: "变色龙16灯重启版",
-            price: 299.00,
-            originalPrice: 1999999999.00,
-            sales: "已售不知道",
-            image: "images/cu-PL-LF.png",
-            taobaoLink: "https://taobao.com"
-        },
-        {
-            id: 4,
-            title: "变色龙Ultra保护壳",
-            price: 129.00,
-            originalPrice: 199.00,
-            sales: "已售5千",
-            image: "images/cu-PL-LF.png",
-            taobaoLink: "https://taobao.com"
+﻿// 从外部JSON文件加载商品数据
+async function loadProducts() {
+    try {
+        const response = await fetch('products.json');
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
         }
-    ],
-    new: [
-        {
-            id: 5,
-            title: "变色龙16灯重启版👍👍👍",
-            price: 299.00,
-            originalPrice: 399.00,
-            sales: "新品上市",
-            image: "images/cu-PL-LF.png",
-            taobaoLink: "https://taobao.com"
-        },
-        {
-            id: 6,
-            title: "变色龙滴胶坏",
-            price: 159.00,
-            originalPrice: 259.00,
-            sales: "新品上市",
-            image: "images/cu-PL-LF.png",
-            taobaoLink: "https://taobao.com"
-        },
-        {
-            id: 7,
-            title: "变色龙半成品",
-            price: 899.00,
-            originalPrice: 1299.00,
-            sales: "新品上市",
-            image: "images/cu-PL-LF.png",
-            taobaoLink: "https://taobao.com"
-        },
-        {
-            id: 8,
-            title: "变色龙",
-            price: 399.00,
-            originalPrice: 599.00,
-            sales: "新品上市",
-            image: "images/cu-PL-LF.png",
-            taobaoLink: "https://taobao.com"
-        }
-    ]
-};
+        return await response.json();
+    } catch (error) {
+        console.error('Error loading products:', error);
+        return { hot: [], new: [] }; // 返回空数据以防出错
+    }
+}
 
 // 渲染商品卡片
-function renderProducts() {
+async function renderProducts() {
+    const products = await loadProducts();
+
     const hotProductsContainer = document.getElementById('hot-products');
     const newProductsContainer = document.getElementById('new-products');
+
+    // 清空容器
+    hotProductsContainer.innerHTML = '';
+    newProductsContainer.innerHTML = '';
 
     // 渲染热销商品
     products.hot.forEach(product => {
@@ -131,14 +71,3 @@ function createProductCard(product) {
 
 // 页面加载完成后渲染商品
 document.addEventListener('DOMContentLoaded', renderProducts);
-
-// 实际应用中应该从外部JSON文件加载数据
-/*
-fetch('../products.json')
-    .then(response => response.json())
-    .then(data => {
-        products = data;
-        renderProducts();
-    })
-    .catch(error => console.error('Error loading products:', error));
-*/
