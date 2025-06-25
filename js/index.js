@@ -1,4 +1,32 @@
-﻿// 模拟更新操作
+﻿/*****感谢所有参与到网站制作、找问题的用户****\
+****以下为参与到网站制作、找问题的用户名单****
+**********************************************
+*** 参与编辑：                             ***
+***            @砸龙换新的             	   ***
+***             @编织 @梦                  ***
+***              @小晨喵                   ***
+***          @辞.变色龙中间商              ***
+**********************************************
+*** 参与检查：                             ***
+***            @砸龙换新的       	       ***
+***             @编织 @梦                  ***
+***            @NodYoung                   ***
+***               @撕夜                    ***
+***              @小晨喵                   ***
+***              @贺之然                   ***
+*********以及所有访问过网站的用户*************
+**********************************************
+*** 参与模拟操作编辑：                     ***
+***            @砸龙换新的           	   ***
+***          @辞.变色龙中间商              ***
+**********************************************
+*** 参与部署：                             ***
+***      @MR.SIX（cu.511116.xyz /）        ***
+***   @编织 @梦（video.majunfei.club）     ***
+***            @砸龙换新的                 ***
+**https://banming.dpdns.org/ChameleonUltra/ **
+**********************************************/
+// 模拟更新操作
 const updateButton = document.querySelector('.update-button');
 updateButton.addEventListener('click', function () {
     updateMainContent("更新进行中");
@@ -32,23 +60,24 @@ function startProgress() {
     }, 10);
 }
 
+// 16卡槽跳转至首页
+
+
 // 卡槽悬停效果
 const slots = document.querySelectorAll('.slot');
 slots.forEach(slot => {
     slot.addEventListener('click', function () {
         slots.forEach(s => s.style.boxShadow = '0 4px 10px rgba(0, 0, 20, 0.4)');
-        this.style.boxShadow = '0 0 15px rgba(100, 180, 255, 0.7)';
-
-        // 显示卡槽信息
-        alert(`已选择卡槽 ${this.textContent}`);
+        this.style.boxShadow = '0 0 15px rgba(255, 0, 0, 1)';
     });
 });
 
 // 状态指示灯动画
-const indicator = document.querySelector('.status-indicator');
+const indicator = document.querySelector('.status-indicator-red');
 setInterval(() => {
     indicator.style.opacity = indicator.style.opacity === '0.5' ? '1' : '0.5';
 }, 800);
+
 
 // 导航菜单激活状态
 const navItems = document.querySelectorAll('.nav-item');
@@ -80,40 +109,78 @@ function updateMainContent(page) {
     switch (page) {
         case '首页':
             content.innerHTML = `
-                        <div class="status-item">
-                            <span class="status-label">设备标识</span>
-                            <div class="status-value">
-                                D8:62:DE:56:B7:71
-                                <span class="status-error">❌</span>
+            <div class="status-bar">
+
+                <div class="connection-status statusconnected" style="display:none;">
+                    <div class="status-indicator-green"></div>
+                    <span>已连接</span>
+                </div>
+            </div>
+
+            <div class="device-status">
+
+                <div class="statusdisconnection">
+                    <div class="status-item">
+                        <span class="status-label">未连接Chameleon Ultra</span>
+                            <div class="status-value" style="text-align: center;">
+                                请连接设备<i class="fas fa-link"></i>
                             </div>
+                    </div>
+                </div>
+
+                <div class="statusconnected" style="display:none;">
+                    <div class="status-item">
+                        <span class="status-label">设备标识</span>
+                        <div class="status-value">
+                            D8:62:DE:56:B7:71
+                            <span class="status-error">×</span>
                         </div>
-                        
-                        <div class="device-name">${page}</div>
-                        
-                        <div class="slot-container">
-                            <div class="slot-header">
-                                <span>卡槽状态</span>
-                                <span>已使用的卡槽: <span class="slot-count">3/16</span></span>
-                            </div>
-                            
-                            <div class="slots">
-                                <div class="slot">A</div>
-                                <div class="slot">B</div>
-                                <div class="slot">C</div>
-                            </div>
-                        </div>
-                        
-                        <div class="device-logo">Chameleon Ultra</div>
-                        
-                        <div class="firmware-info">
-                            <span class="firmware-label">轮询固件版本:</span>
-                            <span class="firmware-version">v3.0-29-qc955c4f</span>
-                        </div>
-                        
+                    </div>
+                </div>
+
+                <div class="device-name">Chameleon Ultra</div>
+
+                <div class="slot-container">
+                    <div class="slot-header">
+                        <span>卡槽状态</span>
+                        <span>已使用的卡槽: <span class="slot-count">3/16</span></span>
+                    </div>
+
+                    <div class="slots">
+                        <div class="slot">1</div>
+                        <div class="slot">2</div>
+                        <div class="slot">3</div>
+                        <div class="slot">4</div>
+                        <div class="slot">5</div>
+                        <div class="slot">6</div>
+                        <div class="slot">7</div>
+                        <div class="slot">8</div>
+                        <div class="slot">9</div>
+                        <div class="slot">10</div>
+                        <div class="slot">11</div>
+                        <div class="slot">12</div>
+                        <div class="slot">13</div>
+                        <div class="slot">14</div>
+                        <div class="slot">15</div>
+                        <div class="slot">16</div>
+                    </div>
+                </div>
+
+                <div class="device-logo">Chameleon Ultra</div>
+
+                <div class="firmware-info" style="">
+                    <span class="firmware-label">轮询固件版本:</span>
+                    <span class="firmware-version">
+                        v3.0-29-qc955c4f
                         <button class="update-button">
-                            在线安装最新版本轮询固件
-                            <div class="arrows">↑ ↑ ↑</div>
                         </button>
+                    </span>
+                </div>
+                <div>
+
+                </div>
+            </div>
+
                     `;
             break;
 
@@ -127,35 +194,86 @@ function updateMainContent(page) {
                                 <span>已使用的卡槽: <span class="slot-count">3/16</span></span>
                             </div>
                             
-                            <div class="slots">
-                                <div class="slot">A</div>
-                                <div class="slot">B</div>
-                                <div class="slot">C</div>
-                                <div class="slot">D</div>
-                                <div class="slot">E</div>
-                                <div class="slot">F</div>
-                            </div>
-                            
-                            <div class="slots" style="margin-top: 20px;">
-                                <div class="slot">G</div>
-                                <div class="slot">H</div>
-                                <div class="slot">I</div>
-                                <div class="slot">J</div>
-                                <div class="slot">K</div>
-                                <div class="slot">L</div>
-                            </div>
-                            
-                            <div class="slots" style="margin-top: 20px;">
-                                <div class="slot">M</div>
-                                <div class="slot">N</div>
-                                <div class="slot">O</div>
-                                <div class="slot">P</div>
-                            </div>
-                        </div>
-                        
-                        <button class="update-button" style="margin-top: 30px;">
-                            <i class="fas fa-plus"></i> 添加新卡槽
+                        <button class="kacao">
+                            卡槽1
+                        <div class="arrows">完整体验请使用变色龙轮询16卡固件（点我跳转）</div>
+                        </button><br>
+
+                        <button class="kacao">
+                            卡槽2
+                        <div class="arrows">完整体验请使用变色龙轮询16卡固件（点我跳转）</div>
+                        </button><br>
+
+                        <button class="kacao">
+                            卡槽3
+                        <div class="arrows">完整体验请使用变色龙轮询16卡固件（点我跳转）</div>
+                        </button><br>
+
+                        <button class="kacao">
+                            卡槽4
+                        <div class="arrows">完整体验请使用变色龙轮询16卡固件（点我跳转）</div>
+                        </button><br>
+
+                        <button class="kacao">
+                            卡槽5
+                        <div class="arrows">完整体验请使用变色龙轮询16卡固件（点我跳转）</div>
+                        </button><br>
+
+                        <button class="kacao">
+                            卡槽6
+                        <div class="arrows">完整体验请使用变色龙轮询16卡固件（点我跳转）</div>
+                        </button><br>
+
+                        <button class="kacao">
+                            卡槽7
+                        <div class="arrows">完整体验请使用变色龙轮询16卡固件（点我跳转）</div>
+                        </button><br>
+
+                        <button class="kacao">
+                            卡槽8
+                        <div class="arrows">完整体验请使用变色龙轮询16卡固件（点我跳转）</div>
+                        </button><br>
+
+                        <button class="kacao">
+                            卡槽9
+                        <div class="arrows">完整体验请使用变色龙轮询16卡固件（点我跳转）</div>
+                        </button><br>
+
+                        <button class="kacao">
+                            卡槽10
+                        <div class="arrows">完整体验请使用变色龙轮询16卡固件（点我跳转）</div>
+                        </button><br>
+
+                        <button class="kacao">
+                            卡槽11
+                        <div class="arrows">完整体验请使用变色龙轮询16卡固件（点我跳转）</div>
+                        </button><br>
+
+                        <button class="kacao">
+                            卡槽12
+                        <div class="arrows">完整体验请使用变色龙轮询16卡固件（点我跳转）</div>
+                        </button><br>
+
+                        <button class="kacao">
+                            卡槽13
+                        <div class="arrows">完整体验请使用变色龙轮询16卡固件（点我跳转）</div>
+                        </button><br>
+
+                        <button class="kacao">
+                            卡槽14
+                        <div class="arrows">完整体验请使用变色龙轮询16卡固件（点我跳转）</div>
+                        </button><br>
+
+                        <button class="kacao">
+                            卡槽15
+                        <div class="arrows">完整体验请使用变色龙轮询16卡固件（点我跳转）</div>
+                        </button><br>
+
+                        <button class="kacao">
+                            卡槽16
+                        <div class="arrows">完整体验请使用变色龙轮询16卡固件（点我跳转）</div>
                         </button>
+                </button>
                     `;
             break;
 
@@ -201,7 +319,7 @@ function updateMainContent(page) {
             content.innerHTML = `
                      <div class="device-name">正在更新</div>
                         <div style="text-align: center; margin-top: 40px; color: #8a9bb8;">
-                            <i class="fas fa-cogs" style="font-size: 48px; margin-bottom: 20px;"></i>
+                            <i class="fas fa-spinner fa-spin" style="font-size: 48px; margin-bottom: 20px;"></i>
                             <p><progress max="100" value="0" id="updateprogress"> 更新中 </progress></p>
                         </div>
                     `;
@@ -213,8 +331,31 @@ function updateMainContent(page) {
             content.innerHTML = `
                      <div class="device-name">恭喜，更新完成！</div>
                         <div style="text-align: center; margin-top: 40px; color: #8a9bb8;">
-                            <i class="fas fa-cogs" style="font-size: 48px; margin-bottom: 20px;"></i>
-                            <p>更新完成，${tkymdjs}秒后将自动退出本页面</p>
+                            <i class="fas fa-check" style="font-size: 48px; margin-bottom: 20px;"></i>
+                            <p>更新已成功完成，感谢您的耐心等待！<br>本页面将在3秒后自动退出</p>
+                            <button onclick="updateMainContent('首页')" class="button">立即退出</button>
+                     </div>
+                    `;
+            break;
+        /*[+]*/
+        case '读取卡片':
+            /*[+]*/
+            content.innerHTML = `
+                     <div class="device-name">${page}</div>
+                        <div style="text-align: center; margin-top: 40px; color: #8a9bb8;">
+                            <i class="fas fa-check" style="font-size: 48px; margin-bottom: 20px;"></i>
+                            <button onclick="alert('读卡完成，已自动保存')" class="button">读卡</button>
+                     </div>
+                    `;
+            break
+
+        case '写入卡片':
+            /*[+]*/
+            content.innerHTML = `
+                     <div class="device-name">${page}</div>
+                        <div style="text-align: center; margin-top: 40px; color: #8a9bb8;">
+                            <i class="fas fa-check" style="font-size: 48px; margin-bottom: 20px;"></i>
+                            <button onclick="alert('写卡完成')" class="button">写卡</button>
                      </div>
                     `;
             break;
@@ -225,7 +366,7 @@ function updateMainContent(page) {
                         <div class="device-name">${page}</div>
                         <div style="text-align: center; margin-top: 40px; color: #8a9bb8;">
                             <i class="fas fa-cogs" style="font-size: 48px; margin-bottom: 20px;"></i>
-                            <p>${page}功能正在开发中</p>
+                            <p>抱歉，模拟${page}功能正在开发中，请您耐心等待。</p>
                         </div>
                     `;
     }
@@ -234,6 +375,24 @@ function updateMainContent(page) {
     document.querySelector('.update-button')?.addEventListener('click', updateButtonClickHandler);
 }
 
+// 绑定连接按钮点击事件 
+document.querySelector('.connect')?.addEventListener('click', connect);  
+
+// 连接按钮点击处理函数
+function connect() {
+    // 模拟连接过程
+    const originalText = this.innerHTML;
+    this.innerHTML = '<i class="fas fa-spinner fa-spin"></i> 连接中...';
+    this.disabled = true;
+    setTimeout(() => {
+        this.innerHTML = originaldText;
+        this.disabled = false;
+        alert('连接成功！');
+        updateMainContent('首页'); // 更新内容为“首页”页面
+        document.querySelector('.statusdisconnection').style.display = 'none'; // 隐藏未连接状态
+        document.querySelector('.statusconnection').style.display = 'inline'; // 显示已连接状态
+    }, 1500);
+}   
 // 更新按钮点击处理函数
 function updateButtonClickHandler() {
     // 添加点击动画

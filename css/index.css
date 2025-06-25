@@ -1,4 +1,33 @@
-* {
+/*****感谢所有参与到网站制作、找问题的用户****\
+****以下为参与到网站制作、找问题的用户名单****
+**********************************************
+*** 参与编辑：                             ***
+***            @砸龙换新的             	   ***
+***             @编织 @梦                  ***
+***              @小晨喵                   ***
+***          @辞.变色龙中间商              ***
+**********************************************
+*** 参与检查：                             ***
+***            @砸龙换新的       	       ***
+***             @编织 @梦                  ***
+***            @NodYoung                   ***
+***               @撕夜                    ***
+***              @小晨喵                   ***
+***              @贺之然                   ***
+*********以及所有访问过网站的用户*************
+**********************************************
+*** 参与模拟操作编辑：                     ***
+***            @砸龙换新的           	   ***
+***          @辞.变色龙中间商              ***
+**********************************************
+*** 参与部署：                             ***
+***      @MR.SIX（cu.511116.xyz /）        ***
+***   @编织 @梦（video.majunfei.club）     ***
+***            @砸龙换新的                 ***
+**https://banming.dpdns.org/ChameleonUltra/ **
+**********************************************/
+
+\* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -248,18 +277,6 @@ body {
         background: linear-gradient(145deg, rgba(40, 60, 120, 0.7), rgba(35, 50, 100, 0.8));
     }
 
-    .slot:nth-child(1) {
-        background: linear-gradient(145deg, rgba(106, 17, 203, 0.4), rgba(80, 15, 150, 0.5));
-    }
-
-    .slot:nth-child(2) {
-        background: linear-gradient(145deg, rgba(37, 117, 252, 0.4), rgba(25, 90, 220, 0.5));
-    }
-
-    .slot:nth-child(3) {
-        background: linear-gradient(145deg, rgba(0, 198, 255, 0.4), rgba(0, 160, 220, 0.5));
-    }
-
 .device-logo {
     text-align: center;
     margin: 10px 0 30px;
@@ -344,12 +361,20 @@ body {
     color: #8a9bb8;
 }
 
-.status-indicator {
+.status-indicator-red {
     width: 10px;
     height: 10px;
     border-radius: 50%;
     background: #ff6b6b;
     box-shadow: 0 0 8px #ff6b6b;
+}
+
+.status-indicator-green {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #09d800;
+    box-shadow: 0 0 8px #09d800;
 }
 
 .footer {
@@ -387,4 +412,39 @@ body {
     .nav-footer {
         display: none;
     }
+}
+
+.kacao {
+    display: block;
+    width: 100%;
+    background: linear-gradient(90deg, #0061ff, #00d2ff);
+    border: none;
+    border-radius: 14px;
+    padding: 16px;
+    color: white;
+    font-size: 17px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0, 110, 255, 0.4);
+}
+
+.button {
+    display: block;
+    width: 50%;
+    text-align: center;
+    background: linear-gradient(90deg, #0061ff, #00d2ff);
+    border: none;
+    border-radius: 14px;
+    padding: 16px;
+    color: white;
+    font-size: 17px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0, 110, 255, 0.4);
 }
